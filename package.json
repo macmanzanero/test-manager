@@ -1,0 +1,17 @@
+{
+  "name": "test-manager-root",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend-admin"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm:dev-backend\" \"npm:dev-frontend\"",
+    "dev-backend": "npm --prefix backend run dev",
+    "dev-frontend": "npm --prefix frontend-admin run dev",
+    "install-all": "npm install --workspaces"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}
